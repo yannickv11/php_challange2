@@ -7,7 +7,7 @@
  */
 
 $dbc = mysqli_connect('localhost','yannick','1234','apen','8889') or die('error connecting');
-$query = "SELECT * FROM aap";
+$query = "SELECT soort FROM aap";
 $result = mysqli_query ($dbc , $query) or die('error querying');
 ?>
 <html>
@@ -56,7 +56,7 @@ $result = mysqli_query ($dbc , $query) or die('error querying');
         <ul>
             <?php
             while ($row = mysqli_fetch_array($result)){
-                echo "<li><a href='https://www.google.nl/search?q=" . $row['idaap'] . "&tbm=isch'>" . $row['soort'] . "</a></li>";
+                echo "<li><a href='https://www.google.nl/search?q=" . $row['soort'] . "&tbm=isch'>" . $row['soort'] . "</a></li>";
             }
             ?>
         </ul>
